@@ -5,7 +5,6 @@
 import peasy.*; //PeasyCam
 
 Star sun; //used as a focus for the camera and as the system's source of light
-PeasyCam camera; //camera that allows for mouse control
 float sunRadius = 100; //radius of the sun; experimentally determined to be decent
 int maxNumPlanets = 48; //maximum number of planets to spawn
 int currentNumPlanets = 0; //keeps track of how many planets there currently are
@@ -16,6 +15,7 @@ int childrenCap = 16; //the cap on many children planets any one planet (or star
 int maxDepth = 3; //how many levels of children planets a star can have; experimentally determined to be decent
 float planetSpawnProbability = random(0.3, 0.7); //the chance of a planet spawning; experimentally determined to be decent (must be bounded by 0 to 1)
 float parentToChildRadiusRatio = 0.5; //what fraction of the parent's radius is a child capped to; to prevent planets from being too near their parents' size; experimentally determined to be decent
+boolean drawBackground = true; //drawing the backgruond can be turned off for some interesting drawings
 
 void setup() {
   size(1600, 1600, P3D);
@@ -23,13 +23,14 @@ void setup() {
   float maxR = distanceToCornerOfFrame; //the furthest possible distance from the start that (the center of) a child planet can spawn
   noStroke();
   sun = new Star(sunRadius, childrenCap, maxR);
-  camera = new PeasyCam(this, distanceToCornerOfFrame);
+  PeasyCam camera = new PeasyCam(this, distanceToCornerOfFrame); //camera that allows for mouse control
   //if (currentNumPlanets == 0) { println("Sorry, this random generation produced no planets. Try again to get something more exciting."); } //deprecated for being rare enough (1/(childrenCap * 1/(planetSpawnProbability lower bound)) chance) to not warrant and being the only use of the command prompt
 }
 
 void draw() {
-  background(0); //this can be turned off for some interesting drawings
-  lightFalloff(0.04, 0, 0); //falloff rate experimentally determined to be decent
+  if (drawBackground) {
+    background(0);
+  }
   sun.show();
   sun.update();
 }

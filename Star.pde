@@ -55,6 +55,7 @@ class Star {
       clr[1] = 127;
       clr[2] = 127;
     }
+    lightFalloff(0.04, 0, 0); //falloff rate experimentally determined to be decent
     float ambientBrightnessMultiplier = 5/255.0; //experimentally determined to be decent
     ambientLight(max(sun.clr[0] * ambientBrightnessMultiplier, 8), max(sun.clr[1] * ambientBrightnessMultiplier, 4), max(sun.clr[2] * ambientBrightnessMultiplier, 4)); //ambient light is not as realistic, but the system looks more interesting with it; ambient light is slightly whitened relative to star's color to show off the planets' colors
     pointLight(clr[0], clr[1], clr[2], 0, 0, 0);
