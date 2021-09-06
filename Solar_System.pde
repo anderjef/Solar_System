@@ -1,6 +1,4 @@
-//started 09/16/19
-//inspiration: https://www.youtube.com/watch?v=l8SiJ-RmeHU, https://www.youtube.com/watch?v=dncudkelNxw, https://www.youtube.com/watch?v=FGAwi7wpU8c
-//generates a random solar system (with some arbitrary constraints)
+//Jeffrey Andersen
 
 import peasy.*; //PeasyCam
 
@@ -15,7 +13,7 @@ int childrenCap = 16; //the cap on many children planets any one planet (or star
 int maxDepth = 3; //how many levels of children planets a star can have; experimentally determined to be decent
 float planetSpawnProbability = random(0.3, 0.7); //the chance of a planet spawning; experimentally determined to be decent (must be bounded by 0 to 1)
 float parentToChildRadiusRatio = 0.5; //what fraction of the parent's radius is a child capped to; to prevent planets from being too near their parents' size; experimentally determined to be decent
-boolean drawBackground = true; //drawing the backgruond can be turned off for some interesting drawings
+boolean drawBackground = true; //drawing the background can be turned off for some interesting drawings
 
 void setup() {
   size(1600, 1600, P3D);
@@ -33,4 +31,8 @@ void draw() {
   }
   sun.show();
   sun.update();
+}
+
+void mousePressed() { //pressing the mouse toggles whether the background is drawn or not
+  drawBackground = !drawBackground;
 }

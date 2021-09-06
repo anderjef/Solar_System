@@ -1,3 +1,6 @@
+//Jeffrey Andersen
+
+
 class Planet {
   float r, theta = random(TWO_PI); //polar coordinates
   float radius; //size of planet
@@ -5,6 +8,7 @@ class Planet {
   float orbitSpeed;
   ArrayList<Planet> childrenPlanets = new ArrayList<Planet>();
   int myDepth;
+
 
   Planet(float parentRadius, float maxR, int parentDepth) {
     radius = max(random(parentRadius * parentToChildRadiusRatio), minRadius); //children take a radius no greater than their parent's
@@ -26,12 +30,14 @@ class Planet {
     }
   }
 
+
   void update() {
     theta += orbitSpeed; //considered making the revolutions more 3D, but in reality, most are very close to being on a plane
     for (int i = 0; i < childrenPlanets.size(); ++i) {
       childrenPlanets.get(i).update();
     }
   }
+
 
   void show() {
     pushMatrix();

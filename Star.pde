@@ -1,3 +1,5 @@
+//Jeffrey Andersen
+
 class Star {
   float theta = random(TWO_PI); //rotation angle
   float radius; //size of star
