@@ -27,6 +27,8 @@ Current version: 0.1.0
 
 ![Example 1 Picture](Picture1.png)
 ![Example 2 Picture](Picture2.png)
+![Example 3 Picture Without Space Redrawn](Picture3.png)
+![Example 4 Picture Without Space Redrawn](Picture4.png)
 
 ### Folder structure
 
