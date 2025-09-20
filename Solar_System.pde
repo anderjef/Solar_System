@@ -1,5 +1,3 @@
-//Jeffrey Andersen
-
 import peasy.*; //PeasyCam
 
 float sunRadius = 100; //radius of the sun; experimentally determined to be decent
@@ -15,18 +13,19 @@ boolean drawBackground = true; //drawing the background can be turned off for so
 float starDeltaRotation = 0.0006; //how fast the star rotates
 float xRotationMultiplier = 1, yRotationMultiplier = 2, zRotationMultiplier = 3;
 
-Star sun; //used as a focus for the camera and as the system's source of light
-int currentNumPlanets = 0; //how many planets there currently are
+Star sun; //used as a focus for the camera and as the system's light source
+int currentNumPlanets = 0;
 PeasyCam cam;
 
 void setup() {
   size(1600, 1600, P3D);
   float distanceToCornerOfFrame = sqrt(width * width + height * height) / 2;
-  float maxR = distanceToCornerOfFrame; //the furthest possible distance from the start that (the center of) a child planet can spawn
   noStroke();
-  sun = new Star(sunRadius, childrenCap, maxR);
+  sun = new Star(sunRadius, childrenCap, distanceToCornerOfFrame);
   cam = new PeasyCam(this, distanceToCornerOfFrame); //camera that allows for mouse control
-  //if (currentNumPlanets == 0) { println("Sorry, this random generation produced no planets. Try again to get something more exciting."); } //deprecated for being rare enough (1/(childrenCap * 1/(planetSpawnProbability lower bound)) chance) to not warrant and being the only use of the command prompt
+  //if (currentNumPlanets == 0) { //deprecated for being rare enough (1/(childrenCap * 1/(planetSpawnProbability lower bound)) chance) to not warrant and being the only use of the command prompt
+  //  println("Sorry, this random generation produced no planets. Try again to get something more exciting.");
+  //}
 }
 
 void draw() {
@@ -37,8 +36,8 @@ void draw() {
   sun.update();
 }
 
-void keyPressed() { //pressing the spacebar toggles whether the background is drawn or not
-  if (keyCode == ' ') {
+void keyPressed() {
+  if (keyCode == ' ') { //spacebar toggles whether the background is drawn or not
     drawBackground = !drawBackground;
   }
 }

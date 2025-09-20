@@ -11,14 +11,14 @@
     - [Programming language(s)](#programming-languages)
   - [Installation](#installation)
   - [Usage](#usage)
-    - [Invokation](#invokation)
+    - [Invocation](#invocation)
     - [Operation](#operation)
   - [Contributions](#contributions)
 
 ## Description
 
 This program generates a random solar-system animation.  
-Start date: September 16, 2019  
+Start date: 2019-09-16  
 Current version: 0.1.0  
 
 ### Display
@@ -41,8 +41,8 @@ Current version: 0.1.0
 
 - Processing (Java)
   - [Solar_System.pde](Solar_System.pde)&mdash;main program entrance sets up canvas and executes animation steps
-  - [Planet.pde](Planet.pde)&mdash;defines Planet class/object
-  - [Star.pde](Star.pde)&mdash;defines Star class/object
+  - [Planet.pde](Planet.pde)&mdash;defines Planet class
+  - [Star.pde](Star.pde)&mdash;defines Star class
 
 ## Installation
 
@@ -53,14 +53,14 @@ Current version: 0.1.0
 
 ## Usage
 
-### Invokation
+### Invocation
 
 - See [Installation](#installation).
 - Run the code from within the Processing IDE or export the application first (exporting requires copying [starTexture.jpg](starTexture.jpg) into the executable's folder).
 
 ### Operation
 
-Click and drag the display to rotate the camera. Scroll to zoom. Press the mouse button to toggle whether the black, space background is redrawn each frame.
+Click and drag the display to rotate the camera. Scroll to zoom. Press the spacebar to toggle whether the black, space background is redrawn each frame.
 
 ## Contributions
 

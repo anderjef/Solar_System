@@ -1,5 +1,3 @@
-//Jeffrey Andersen
-
 class Star {
   float theta = random(TWO_PI); //rotation angle
   float r; //size of star
@@ -9,9 +7,9 @@ class Star {
   PShape sphereShape;
   int depthInHierarchy = 0;
 
-  Star(float _r, int maxNumChildren, float maxR) {
+  Star(float _r, int maxNumChildren, float maxR) { //maxR is the furthest possible distance from the start that (the center of) a child planet can spawn
     r = _r;
-    starTexture = loadImage("starTexture.jpg"); //future consideration: somewhat awkwardly, the light the star currently shines could be a different color than the star's current Sun texture
+    starTexture = loadImage("starTexture.jpg"); //TODO: somewhat awkwardly, the light the star currently shines could be a different color than the star's current Sun texture
     sphereShape = createShape(SPHERE, r);
     sphereShape.setTexture(starTexture);
     if (depthInHierarchy <= maxDepth) {

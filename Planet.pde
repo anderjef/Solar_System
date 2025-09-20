@@ -1,9 +1,7 @@
-//Jeffrey Andersen
-
 class Planet {
-  float theta = random(TWO_PI); //polar coordinates
+  float theta = random(TWO_PI); //polar coordinate
   float orbitalRadius;
-  float radius; //size of planet
+  float radius; //planet radius
   float[] clr = { random(255), random(255), random(255) }; //color
   float orbitSpeed;
   ArrayList<Planet> childrenPlanets = new ArrayList<Planet>();
